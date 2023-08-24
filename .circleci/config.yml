@@ -11,10 +11,12 @@ jobs:
     steps:
       - checkout
 
-      # Run the tests
+      # Run the tests using a Bash script
       - run:
-          name: Run tests
-          command: python tpy.py
+          name: Run tests with Bash script
+          command: |
+            #!/bin/bash -eo pipefail
+            python tpy.py
 
 workflows:
   version: 2
